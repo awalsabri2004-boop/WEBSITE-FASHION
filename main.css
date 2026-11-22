@@ -1,77 +1,5 @@
 /* ── Google Font Import ─────────────────────────────────────────── */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
-@media (max-width: 768px) {
-    .navbar {
-        padding: 0 14px;
-        gap: 8px;
-    }
-
-    .nav-left,
-    .nav-right {
-        gap: 10px;
-    }
-
-    .nav-left a,
-    .nav-right a {
-        font-size: 0.7rem;
-        white-space: nowrap;
-    }
-
-    .nav-logo a {
-        font-size: 1.25rem;
-        letter-spacing: 0.1em;
-    }
-
-    .hero-content {
-        padding: 0 24px;
-    }
-
-    .hero-title {
-        font-size: 3.2rem;
-    }
-
-    .stats-bar,
-    .features-strip {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .about-section,
-    .collection-section,
-    .newsletter {
-        padding: 64px 20px;
-    }
-
-    .about-inner,
-    .women-spotlight,
-    .footer-top,
-    .footer-links {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-
-    .about-image,
-    .women-main-img {
-        height: 340px;
-    }
-
-    .deck {
-        width: 100%;
-        max-width: 340px;
-        height: 320px;
-    }
-
-    .card {
-        width: 150px;
-        height: 220px;
-    }
-
-    .footer-top,
-    .footer-bottom {
-        padding: 40px 20px;
-    }
-}
-
-
 /* ── Reset ──────────────────────────────────────────────────────── */
 *, *::before, *::after {
     margin: 0;
@@ -749,3 +677,75 @@ img { max-width: 100%; display: block; }
 }
 
 .footer-socials a:hover { color: #fff; }
+
+/* ── Responsive (MESTI paling bawah) ─────────────────────────── */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 14px;
+        gap: 8px;
+    }
+
+    .nav-left,
+    .nav-right {
+        gap: 10px;
+    }
+
+    .nav-left a,
+    .nav-right a {
+        font-size: 0.7rem;
+        white-space: nowrap;
+    }
+
+    .nav-logo a {
+        font-size: 1.25rem;
+        letter-spacing: 0.1em;
+    }
+
+    .hero-content {
+        padding: 0 24px;
+    }
+
+    .hero-title {
+        font-size: 3.2rem;
+    }
+
+    .stats-bar,
+    .features-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-section,
+    .collection-section,
+    .newsletter {
+        padding: 64px 20px;
+    }
+
+    .about-inner,
+    .women-spotlight,
+    .footer-top,
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .about-image,
+    .women-main-img {
+        height: 340px;
+    }
+
+    .deck {
+        width: 100%;
+        max-width: 340px;
+        height: 320px;
+    }
+
+    .card {
+        width: 150px;
+        height: 220px;
+    }
+
+    .footer-top,
+    .footer-bottom {
+        padding: 40px 20px;
+    }
+}
