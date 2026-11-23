@@ -1,0 +1,352 @@
+/* Page-specific styles for HTML/MENS.html */
+
+.active-link {
+    color: #111;
+    border-bottom: 1px solid #111;
+    padding-bottom: 2px;
+}
+
+/* Hero */
+.mens-hero {
+    position: relative;
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.mens-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: #1a1a1a;
+}
+
+.mens-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    opacity: 0.72;
+}
+
+.mens-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.72) 35%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+.mens-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    padding: 0 80px;
+    color: #fff;
+}
+
+/* Featured product actions */
+.product-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn-light-border {
+    background: transparent;
+    color: #111;
+    border-color: #111;
+}
+
+.btn-light-border:hover {
+    background: #111;
+    color: #fff;
+}
+
+/* Collection grid */
+.mens-grid-section {
+    background: #fafafa;
+}
+
+.shirt-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.shirt-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shirt-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.shirt-card-img {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.shirt-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.6s ease;
+}
+
+.shirt-card:hover .shirt-card-img img {
+    transform: scale(1.05);
+}
+
+.shirt-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: #111;
+    color: #fff;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+}
+
+.shirt-card-body {
+    padding: 22px;
+}
+
+.shirt-category {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.shirt-card-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.shirt-desc {
+    font-size: 0.86rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    min-height: 66px;
+}
+
+.shirt-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+.shirt-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #111;
+}
+
+.shirt-link {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #111;
+    border-bottom: 1px solid #111;
+    padding-bottom: 2px;
+}
+
+.shirt-link:hover {
+    color: #666;
+    border-color: #666;
+}
+
+/* Detail cards */
+.shirt-details-section {
+    background: #fff;
+}
+
+.detail-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.detail-card {
+    padding: 36px 30px;
+    background: #fafafa;
+    border: 1px solid #ececec;
+    text-align: left;
+}
+
+.detail-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #999;
+    margin-bottom: 14px;
+}
+
+.detail-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.detail-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Size and care */
+.size-care-section {
+    background: #fafafa;
+    text-align: left;
+}
+
+.size-care-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.info-panel {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    padding: 40px;
+}
+
+.info-panel h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    color: #111;
+}
+
+.info-panel p {
+    color: #666;
+    font-size: 0.92rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.size-table-wrap {
+    overflow-x: auto;
+}
+
+.size-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 320px;
+}
+
+.size-table th,
+.size-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+.size-table th {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.size-table td {
+    color: #333;
+}
+
+.care-list {
+    list-style: none;
+    margin-bottom: 28px;
+}
+
+.care-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.care-list strong {
+    color: #111;
+}
+
+.care-btn {
+    margin-top: 6px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .shirt-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .mens-hero-content {
+        padding: 0 40px;
+    }
+
+    .detail-grid,
+    .size-care-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .mens-hero {
+        min-height: 64vh;
+    }
+
+    .mens-hero-content {
+        padding: 0 24px;
+    }
+
+    .shirt-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shirt-card-img {
+        height: 360px;
+    }
+
+    .info-panel {
+        padding: 28px 22px;
+    }
+
+    .product-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>New Arrivals – Video Slide</title>
+<style>
+:root{--bg:#111;--fg:#fff}
+@media (prefers-color-scheme: dark){:root{--bg:#111;--fg:#fff}}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.show{position:relative;width:100%;height:100%;overflow:hidden;background:#000}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease}
+.slide.active{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1);transition:transform 6s linear}
+.slide.active img{transform:scale(1.12)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),transparent 55%)}
+.cap{position:absolute;left:6%;bottom:14%;z-index:2;max-width:80%;opacity:0;transform:translateY(24px);transition:all .8s ease .4s}
+.slide.active .cap{opacity:1;transform:none}
+.cap small{letter-spacing:.3em;text-transform:uppercase;font-size:clamp(12px,1.6vw,16px);opacity:.85}
+.cap h2{font-size:clamp(36px,8vw,92px);line-height:1;margin:.15em 0;font-weight:800}
+.cap p{font-size:clamp(14px,2vw,20px);opacity:.9;margin-bottom:1em}
+.cap a{display:inline-block;padding:.7em 1.6em;background:#fff;color:#111;text-decoration:none;font-weight:700;border-radius:99px;font-size:14px;transition:transform .2s ease,background .2s ease}
+.cap a:hover{transform:translateY(-2px);background:#f0f0f0}
+.bars{position:absolute;left:6%;right:6%;bottom:6%;display:flex;gap:8px;z-index:3;padding-bottom:env(safe-area-inset-bottom,0px)}
+.bar{flex:1;height:4px;background:rgba(255,255,255,.3);border-radius:2px;overflow:hidden;cursor:pointer}
+.bar i{display:block;height:100%;width:0;background:#fff}
+.bar.done i{width:100%}
+.bar.active i{animation:fill 6s linear forwards}
+.paused .bar.active i,.paused .slide.active img{animation-play-state:paused}
+@keyframes fill{to{width:100%}}
+.btn{position:absolute;top:50%;z-index:3;transform:translateY(-50%);background:rgba(0,0,0,.4);color:#fff;border:0;width:44px;height:44px;border-radius:50%;font-size:20px;cursor:pointer}
+.prev{left:12px}.next{right:12px}
+.pp{top:calc(16px + env(safe-area-inset-top,0px));right:16px;transform:none}
+</style></head><body>
+
+  <!--  SLIDE SHOW  -->
+<div class="show" id="show">
+  <div class="slide active">
+    <img src="../IMAGE/MAN/MENS FASHION NEW ARR.jpg" alt="Men's collection">
+    <div class="cap">
+      <small>New Collection</small>
+      <h2>MEN</h2>
+      <p>Sharp. Bold. Effortless.</p>
+      <a href="../HTML/MENS.html" target="_top">Shop Men</a>
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="../IMAGE/WOMEN/WOMEN FASHION NEW ARR.jpg" alt="Women's collection">
+    <div class="cap">
+      <small>New Collection</small>
+      <h2>WOMEN</h2>
+      <p>Elegance redefined for every moment.</p>
+      <a href="../HTML/WOMEN.html" target="_top">Shop Women</a>
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="../IMAGE/KIDS/KIDS FASHION NEW ARR.jpg" alt="Kids' collection">
+    <div class="cap">
+      <small>New Collection</small>
+      <h2>KIDS</h2>
+      <p>Playful style, everyday comfort.</p>
+      <a href="../HTML/KIDS.html" target="_top">Shop Kids</a>
+    </div>
+  </div>
+
+  <button class="btn prev" aria-label="Previous">&#8249;</button>
+  <button class="btn next" aria-label="Next">&#8250;</button>
+  <button class="btn pp" id="pp" aria-label="Pause">&#10074;&#10074;</button>
+  <div class="bars" id="bars"></div>
+</div>
+<script>
+const slides=[...document.querySelectorAll('.slide')],bars=document.getElementById('bars'),show=document.getElementById('show');
+const DUR=6000;let cur=0,timer=null,playing=true;
+slides.forEach((_,i)=>{const b=document.createElement('div');b.className='bar';b.innerHTML='<i></i>';b.onclick=()=>go(i);bars.appendChild(b)});
+const bs=[...bars.children];
+function go(n){
+  cur=(n+slides.length)%slides.length;
+  slides.forEach((s,i)=>s.classList.toggle('active',i===cur));
+  bs.forEach((b,i)=>{b.classList.remove('active','done');void b.offsetWidth;if(i<cur)b.classList.add('done');if(i===cur)b.classList.add('active')});
+  clearTimeout(timer);if(playing)timer=setTimeout(()=>go(cur+1),DUR);
+}
+document.querySelector('.next').onclick=()=>go(cur+1);
+document.querySelector('.prev').onclick=()=>go(cur-1);
+document.getElementById('pp').onclick=e=>{playing=!playing;show.classList.toggle('paused',!playing);e.target.textContent=playing?'❚❚':'▶';go(cur)};
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
+go(0);
+</script></body></html>
